@@ -5,8 +5,8 @@
 
 ## Terraform
 
-### Intro - /terraform/intro
-*crear un archivo 'terraform.tfvars' con tus variables de entorno*
+### Intro: /terraform/intro
+*Crear tus variables de entorno en un  llamado archivo: terraform.tfvars*
 
 * `do_token=TOKEN_DIGITALOCEAN_API`
 * `public_key=YOUR_SSH_PUBLIC (~/.ssh/id_rsa.pub)`
