@@ -5,7 +5,9 @@
 
 ## Terraform
 
-### Intro: /terraform/intro
+### Intro [/terraform/intro]
+[/terraform/intro]: https://github.com/brandovidal/devops/tree/master/terraform/intro
+
 *Crear tus variables de entorno en un  llamado archivo: terraform.tfvars*
 
 * `do_token=TOKEN_DIGITALOCEAN_API`
