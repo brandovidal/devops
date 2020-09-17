@@ -1,4 +1,5 @@
 variable "domain" {}
+variable "mail" {}
 
 resource "digitalocean_droplet" "mail" {
   image     = "ubuntu-20-04-x64"

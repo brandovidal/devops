@@ -8,7 +8,7 @@ resource "digitalocean_record" "mail" {
   domain =  var.domain
   type   = "A"
   name   = "mail"
-  ttl    = "30"
+  ttl    = "1800"
   value  = digitalocean_droplet.mail.ipv4_address
 }
 
@@ -18,8 +18,8 @@ resource "digitalocean_record" "mx" {
   type   = "MX"
   name   = "@"
   priority    = "10"
-  ttl    = "14400"
-  value  = "mail.${var.domain}."
+  ttl    = "1800"
+  value  = var.mail
 }
 
 # SPF
@@ -27,7 +27,7 @@ resource "digitalocean_record" "spf" {
   domain = var.domain
   type   = "TXT"
   name   = "@"
-  ttl    = "14400"
+  ttl    = "1800"
   value  = "v=spf1 mx ~all"
 }
 
@@ -36,7 +36,7 @@ resource "digitalocean_record" "dmarc" {
   domain = var.domain
   type   = "TXT"
   name   = "_dmarc.${var.domain}"
-  ttl    = "14400"
+  ttl    = "1800"
   value  = "v=DMARC1;p=none;rua=mailto:dmarc-reports@${var.domain}"
 }
 
@@ -45,8 +45,8 @@ resource "digitalocean_record" "smtp" {
   domain = var.domain
   type   = "CNAME"
   name   = "smtp"
-  ttl    = "14400"
-  value  = "mail.${var.domain}."
+  ttl    = "1800"
+  value  = var.mail
 }
 
 # POP
@@ -54,8 +54,8 @@ resource "digitalocean_record" "pop" {
   domain = var.domain
   type   = "CNAME"
   name   = "pop"
-  ttl    = "14400"
-  value  = "mail.${var.domain}."
+  ttl    = "1800"
+  value  = var.mail
 }
 
 # IMAP
@@ -63,6 +63,6 @@ resource "digitalocean_record" "imap" {
   domain = var.domain
   type   = "CNAME"
   name   = "imap"
-  ttl    = "14400"
-  value  = "mail.${var.domain}."
+  ttl    = "1800"
+  value  = var.mail
 }
