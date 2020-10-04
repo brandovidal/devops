@@ -60,3 +60,5 @@ docker exec -it bfb7bbdcc0fa /bin/bash
 apt-get update
 apt-get install curl -y
 docker run -v ~/dev/projects/devops/docker/index.html:/usr/share/nginx/html/index.html:ro p 8000:80 -d nginx:1.19.2
+
+// MYSQL WORDPRESS
